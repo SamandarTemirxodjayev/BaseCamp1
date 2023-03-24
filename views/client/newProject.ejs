@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mew Project</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    form {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">Home</a></h1>
+  </header>
+  <div class="container">
+    <h1 class="text-align-center">New Project!!!</h1>
+  </div>
+  <div class="container">
+    <form action="/newproject" method="POST">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="ProjectName" style="width: 500px;" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Description</label>
+        <textarea type="text" class="form-control" id="exampleInputPassword1" style="width: 500px;" name="ProjectDescription" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Create Project</button>
+    </form>
+  </div>
+</body>
+</html>

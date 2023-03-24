@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <!-- Add the Bootstrap CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+</head>
+<body class="container">
+  <h1>Register</h1>
+  <% if (typeof error !== 'undefined') { %>
+    <div class="text-danger"><%= error %></div>
+  <% } %>
+  <form action="/register" method="POST">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" class="form-control form-control-lg">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required class="form-control form-control-sm">
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+  <a href="/login">Login</a>
+</body>
+</html>

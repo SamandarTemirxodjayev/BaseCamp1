@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add the Bootstrap CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <title>BaseCamp</title>
+</head>
+<body>
+
+  <header class="container" style="font-size: 30px; width: 100%;">
+    <ul class="d-flex" style="list-style: none;">
+      <li><a href="/newproject" class="text-decoration-none mx-4 list-group-item">Create Project</a></li>
+      <li><a href="/deleteuser" class="text-decoration-none mx-4 list-group-item">Delete Account</a></li>
+      <li><a href="/logout" class="text-decoration-none mx-4 list-group-item">Log Out</a></li>
+    </ul>
+  </header>
+  <div class="container d-block" >
+    <% projects.forEach(function(project) { %>
+      <div class="m-5 p-5" style="background-color: #ccc; width: 50%; text-align: center;">
+        <h1 class="text-success"><%= project.name %></></h1>
+        <h3><%= project.email %></h3>
+        <div class="text-danger">
+          <h5><%= project.description %></h5>
+        </div>
+        <% if(project.email == email){  %>
+          <div style="float: right;">
+            <a href="/projects/<%= project._id %>" class="text-decoration-none ">Edit</a>
+          </div>
+          <% } %>
+      </div>
+    <% }); %>
+    </div>
+</body>
+</html>
